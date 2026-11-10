@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
+    "postinstall": "prisma generate",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write",
     "prisma:migrate": "pnpm prisma migrate dev",
-    "prisma:generate": "pnpm prisma generate dev",
+    "prisma:generate": "pnpm prisma generate",
     "prisma:studio": "pnpm prisma studio"
   },
   "dependencies": {
