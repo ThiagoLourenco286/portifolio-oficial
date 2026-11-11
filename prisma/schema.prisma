@@ -1,0 +1,20 @@
+
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model CallToAction {
+  id        String   @id @default(uuid())
+  nome      String
+  email     String   @unique
+  mensagem  String
+  createdAt DateTime @default(now())
+
+  @@map("call_to_actions")
+}
